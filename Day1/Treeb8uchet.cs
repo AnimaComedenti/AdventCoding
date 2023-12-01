@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Day1
 {
-
     internal class Treeb8uchet
     {
         static string textFilePath = @"..\..\..\input.txt";
@@ -50,9 +49,7 @@ namespace Day1
                 }
             }
 
-            if (lastValue == ' ') lastValue = firstValue;
             string result = firstValue.ToString() + lastValue.ToString();
-
             return int.Parse(result);
         }
         private bool setValues(char c, ref char firstValue, ref char lastValue)
@@ -62,7 +59,6 @@ namespace Day1
                 if (firstValue == ' ')
                 {
                     firstValue = c;
-
                 }
                 lastValue = c;
                 return true;
@@ -73,7 +69,6 @@ namespace Day1
         public string[] getInput()
         {
             string[] lines = File.ReadAllLines(textFilePath);
-
             return lines;
         }
 
@@ -87,7 +82,6 @@ namespace Day1
         public char mapStringToValue(string inputString)
         {
             char result = ' ';
-
             foreach (string str in stingValues2)
             {
                 if (inputString.Contains(str))
