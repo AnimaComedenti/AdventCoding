@@ -9,6 +9,13 @@ namespace Day1
     internal class Treeb8uchet
     {
         static string textFilePath = @"..\..\..\input.txt";
+
+        private Dictionary<string, char> stringValues = new Dictionary<string, char>
+        {
+            {"one", '1'}, {"two", '2'}, {"three",'3'}, {"four", '4'}, {"five",'5'}, {"six",'6'},  {"seven",'7'}, {"eight",'8'}, {"nine", '9'}
+        };
+        private string[] stingValues2 = new string[] { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
         public int calculateCalibrationValue()
         {
             int result = 0;
@@ -22,6 +29,11 @@ namespace Day1
             }
 
             return result;
+        }
+        public string[] getInput()
+        {
+            string[] lines = File.ReadAllLines(textFilePath);
+            return lines;
         }
 
         private int calculateValue(string line)
@@ -66,18 +78,6 @@ namespace Day1
             return false;
         }
 
-        public string[] getInput()
-        {
-            string[] lines = File.ReadAllLines(textFilePath);
-            return lines;
-        }
-
-        private Dictionary<string, char> stringValues = new Dictionary<string, char>
-        {
-            {"one", '1'}, {"two", '2'}, {"three",'3'}, {"four", '4'}, {"five",'5'}, {"six",'6'},  {"seven",'7'}, {"eight",'8'}, {"nine", '9'}
-        };
-
-        private string[] stingValues2 = new string[] {"one","two","three","four","five","six","seven","eight","nine"};
 
         public char mapStringToValue(string inputString)
         {
